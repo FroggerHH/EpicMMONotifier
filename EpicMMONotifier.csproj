@@ -45,8 +45,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\Games\Steam\steamapps\common\Valheim\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
-    <Reference Include="DiscordMessenger">
-      <HintPath>..\..\utils\DiscordMessenger.dll</HintPath>
+    <Reference Include="DiscordMessenger, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\utils\Managers\DiscordMessenger.dll</HintPath>
     </Reference>
     <Reference Include="EpicMMOSystem">
       <HintPath>..\..\utils\Mods\EpicMMOSystem.dll</HintPath>
@@ -55,9 +56,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\utils\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="ServerSync, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\utils\ServerSync.dll</HintPath>
+    <Reference Include="ServerSync">
+      <HintPath>..\..\utils\Managers\ServerSync.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

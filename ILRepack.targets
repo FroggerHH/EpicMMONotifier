@@ -3,8 +3,8 @@
     <Target Name="ILRepacker" AfterTargets="Build">
         <ItemGroup>
             <InputAssemblies Include="$(TargetPath)"/>
-            <InputAssemblies Include="C:\Users\alex\source\repos\Valheim\utils\ServerSync.dll"/>
-            <InputAssemblies Include="C:\Users\alex\source\repos\Valheim\utils\DiscordMessenger.dll"/>
+            <InputAssemblies Include="C:\Users\alex\source\repos\Valheim\utils\Managers\ServerSync.dll"/>
+            <InputAssemblies Include="C:\Users\alex\source\repos\Valheim\utils\Managers\DiscordMessenger.dll"/>
             <InputAssemblies Include="C:\Users\alex\source\repos\Valheim\utils\Newtonsoft.Json.dll"/>
         </ItemGroup>
         <ILRepack Parallel="true" DebugInfo="true" Internalize="true" InputAssemblies="@(InputAssemblies)"

@@ -13,12 +13,12 @@ using Random = UnityEngine.Random;
 #pragma warning disable CS8632
 namespace EpicMMONotifier
 {
-    [BepInDependency("LambaSun.EpicMMOSystem", BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency("WackyMole.EpicMMOSystem", BepInDependency.DependencyFlags.HardDependency)]
     [BepInPlugin(ModGUID, ModName, ModVersion)]
     public class Plugin : BaseUnityPlugin
     {
         #region values
-        private const string ModName = "EpicMMONotifier", ModVersion = "1.0.2", ModGUID = "com.Frogger." + ModName;
+        private const string ModName = "EpicMMONotifier", ModVersion = "1.0.3", ModGUID = "com.Frogger." + ModName;
         private static readonly Harmony harmony = new(ModGUID);
         public static Plugin _self;
         #endregion
