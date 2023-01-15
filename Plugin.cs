@@ -101,26 +101,26 @@ namespace EpicMMONotifier
 
             int random = Random.Range(0, _self.titleMessegesList.Count);
             string title;
-            if (random <= _self.titleMessegesList.Count) title = _self.titleMessegesList[random];
+            if(random <= _self.titleMessegesList.Count) title = _self.titleMessegesList[random];
             else title = _self.titleMessegesList[random - 1];
             title = title.Replace("#PLAYERNICK", playerNick);
             title = title.Replace("#NEWLEVEL", newLevel.ToString());
 
             random = Random.Range(0, _self.descriptionMessegesList.Count);
             string description;
-            if (random <= _self.descriptionMessegesList.Count) description = _self.descriptionMessegesList[random];
+            if(random <= _self.descriptionMessegesList.Count) description = _self.descriptionMessegesList[random];
             else description = _self.descriptionMessegesList[random - 1];
             description = description.Replace("#PLAYERNICK", playerNick);
             description = description.Replace("#NEWLEVEL", newLevel.ToString());
 
             random = Random.Range(0, _self.usernamesList.Count);
             string username;
-            if (random <= _self.usernamesList.Count) username = _self.usernamesList[random];
+            if(random <= _self.usernamesList.Count) username = _self.usernamesList[random];
             else username = _self.usernamesList[random - 1];
 
             string color;
             random = Random.Range(0, _self.colorsList.Count);
-            if (random <= _self.colorsList.Count) color = _self.colorsList[random];
+            if(random <= _self.colorsList.Count) color = _self.colorsList[random];
             else color = _self.colorsList[random - 1];
 
             new DiscordMessage()
@@ -135,17 +135,17 @@ namespace EpicMMONotifier
         }
 
         #region Patch
-         [HarmonyPatch]
-         public static class Pacth
-         {
-             [HarmonyPostfix]
-             [HarmonyPatch(typeof(PlayerFVX), nameof(PlayerFVX.levelUp))]
-             private static void PlayerFVXLevelUpPatch()
-             {
-                 SendDiscordMessage(Player.m_localPlayer.GetPlayerName(), LevelSystem.Instance.getLevel());
-             }
-         }
-         #endregion
+        [HarmonyPatch]
+        public static class Pacth
+        {
+            [HarmonyPostfix]
+            [HarmonyPatch(typeof(PlayerFVX), nameof(PlayerFVX.levelUp))]
+            private static void PlayerFVXLevelUpPatch()
+            {
+                SendDiscordMessage(Player.m_localPlayer.GetPlayerName(), LevelSystem.Instance.getLevel());
+            }
+        }
+        #endregion
         #region tools
         public void Debug(string msg)
         {
@@ -167,7 +167,7 @@ namespace EpicMMONotifier
         }
         private void ConfigChanged(object sender, FileSystemEventArgs e)
         {
-            if ((DateTime.Now - LastConfigChange).TotalSeconds <= 5.0)
+            if((DateTime.Now - LastConfigChange).TotalSeconds <= 5.0)
             {
                 return;
             }
@@ -190,22 +190,22 @@ namespace EpicMMONotifier
                 titleMessegesList = new();
                 string titleMessegesListString = titleMessegesListConfig.Value;
                 string[] titleMesseges = titleMessegesListString.Split(',');
-                foreach (string msg in titleMesseges) titleMessegesList.Add(msg);
+                foreach(string msg in titleMesseges) titleMessegesList.Add(msg);
 
                 descriptionMessegesList = new();
                 string descriptionMessegesListString = descriptionMessegesListConfig.Value;
                 string[] descriptionMesseges = descriptionMessegesListString.Split(',');
-                foreach (string msg in descriptionMesseges) descriptionMessegesList.Add(msg);
+                foreach(string msg in descriptionMesseges) descriptionMessegesList.Add(msg);
 
                 usernamesList = new();
                 string usernamesListString = usernamesListConfig.Value;
                 string[] usernameMesseges = usernamesListString.Split(',');
-                foreach (string msg in usernameMesseges) usernamesList.Add(msg);
+                foreach(string msg in usernameMesseges) usernamesList.Add(msg);
 
                 colorsList = new();
                 string colorsListString = colorsListConfig.Value;
                 string[] colorsMesseges = colorsListString.Split(',');
-                foreach (string msg in colorsMesseges) colorsList.Add(msg);
+                foreach(string msg in colorsMesseges) colorsList.Add(msg);
 
                 webhook = webhookConfig.Value;
             });
